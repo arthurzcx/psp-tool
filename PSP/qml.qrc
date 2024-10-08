@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/PagePaintCalibration.qml</file>
+        <file>qml/ControlButton.qml</file>
+        <file>js/PagePaintCalibration.js</file>
+        <file>qml/PageImageAlignment.qml</file>
+        <file>js/PageImageAlignment.js</file>
+        <file>qml/PageProjectNew.qml</file>
+        <file>res-image/ok.png</file>
+        <file>res-image/notok.png</file>
+        <file>qml/PageTwoImageCalculation.qml</file>
+        <file>js/PageTwoImageCalculation.js</file>
+        <file>qml/PagePaintCalibrationDataFromDisk.qml</file>
+        <file>qml/ControlText.qml</file>
+        <file>qml/ControlInput.qml</file>
+    </qresource>
+</RCC>

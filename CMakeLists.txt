@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+project(psp)
+
+add_subdirectory(base)
+add_subdirectory(algo)
+add_subdirectory(io)
+add_subdirectory(manager)
+add_subdirectory(op)
+add_subdirectory(view)
+add_subdirectory(PSP)

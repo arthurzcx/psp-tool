@@ -1,0 +1,2042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1195</width>
+    <height>655</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>PspTool Alpha</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="imgLabel">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>240</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1195</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOepn"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionSystem_Set"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
+    <addaction name="actionExportView"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionZoom_in"/>
+    <addaction name="actionZoom_out"/>
+    <addaction name="actionPrevious"/>
+    <addaction name="actionNext"/>
+    <addaction name="actionOrigin"/>
+    <addaction name="separator"/>
+    <addaction name="actionViewPseudo"/>
+    <addaction name="actionPseudoConfig"/>
+    <addaction name="actionViewGray"/>
+    <addaction name="separator"/>
+    <addaction name="actionLength"/>
+    <addaction name="actionSectional_View"/>
+    <addaction name="actionHistogram"/>
+    <addaction name="actionFrequency_domain"/>
+   </widget>
+   <widget class="QMenu" name="menuROI">
+    <property name="title">
+     <string>ROI</string>
+    </property>
+    <addaction name="actionOpen_ROI"/>
+    <addaction name="actionSave_ROI_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionROI_by_boxes"/>
+    <addaction name="actionROI_by_polygons"/>
+    <addaction name="actionROI_all"/>
+    <addaction name="actionInvert_ROI"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuMorphology_transfrom">
+     <property name="title">
+      <string>Morphology transfrom</string>
+     </property>
+     <addaction name="actionOpening"/>
+     <addaction name="actionClosing"/>
+     <addaction name="actionMorphologicalGradient"/>
+     <addaction name="actionTop_Hat"/>
+     <addaction name="actionBlack_Hat"/>
+    </widget>
+    <widget class="QMenu" name="menuEdge_and_contour">
+     <property name="title">
+      <string>Edge</string>
+     </property>
+     <addaction name="actionCanny"/>
+     <addaction name="actionSobel_2"/>
+     <addaction name="actionRobert"/>
+     <addaction name="actionPrewitt"/>
+     <addaction name="actionLaplacian"/>
+    </widget>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionArithmetic"/>
+    <addaction name="actionCut_off_intensities"/>
+    <addaction name="separator"/>
+    <addaction name="actionTransform"/>
+    <addaction name="separator"/>
+    <addaction name="actionFlood_ROi"/>
+    <addaction name="actionFilp_up"/>
+    <addaction name="separator"/>
+    <addaction name="actionFilter"/>
+    <addaction name="separator"/>
+    <addaction name="actionFilter_Threshold"/>
+    <addaction name="separator"/>
+    <addaction name="actionRotate"/>
+    <addaction name="actionThresholdImage"/>
+    <addaction name="separator"/>
+    <addaction name="actionDilate"/>
+    <addaction name="actionThin"/>
+    <addaction name="menuMorphology_transfrom"/>
+    <addaction name="separator"/>
+    <addaction name="menuEdge_and_contour"/>
+    <addaction name="actionContour"/>
+    <addaction name="actionHist_equalization"/>
+   </widget>
+   <widget class="QMenu" name="menuMarkers">
+    <property name="title">
+     <string>Markers</string>
+    </property>
+    <addaction name="actionOpen_Markers"/>
+    <addaction name="actionSave_Markers_As"/>
+    <addaction name="actionClose_Markers"/>
+    <addaction name="actionHide_Markers"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionAuto_Mark"/>
+    <addaction name="actionMark"/>
+    <addaction name="actionPin_Mark"/>
+    <addaction name="actionTranslate_marker"/>
+    <addaction name="actionDelete_Marker"/>
+    <addaction name="separator"/>
+    <addaction name="actionReferenceMark"/>
+    <addaction name="actionFill_Up_Markers"/>
+    <addaction name="actionRevise_Statistics"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionAuto_sort"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionFashion"/>
+    <addaction name="actionDecoration"/>
+    <addaction name="actionFonts"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionChart"/>
+    <addaction name="separator"/>
+    <addaction name="actionSummary"/>
+    <addaction name="separator"/>
+    <addaction name="actionDark_Field_Subtraction"/>
+    <addaction name="actionFlat_Field_Correction"/>
+    <addaction name="actionOptical_Distortion_Correction"/>
+    <addaction name="separator"/>
+    <addaction name="actionThresholdTool"/>
+    <addaction name="actionResetThreshold"/>
+    <addaction name="separator"/>
+    <addaction name="actionForeGround_Thinning"/>
+    <addaction name="actionForeGround_Expansion"/>
+    <addaction name="separator"/>
+    <addaction name="actionImage_Alignment"/>
+    <addaction name="actionImageAddition"/>
+    <addaction name="actionImageSubtract"/>
+    <addaction name="actionImageDivision"/>
+    <addaction name="actionImage_average"/>
+    <addaction name="separator"/>
+    <addaction name="actionPressure_Ports"/>
+    <addaction name="separator"/>
+    <addaction name="actionImage_Features"/>
+    <addaction name="actionBackGround"/>
+    <addaction name="actionReset_BackGround"/>
+   </widget>
+   <widget class="QMenu" name="menuB_Convert">
+    <property name="title">
+     <string>B Convert</string>
+    </property>
+    <addaction name="actionOpen_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionUndo_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionMarkers_Copy"/>
+    <addaction name="actionMarkers_Paste"/>
+    <addaction name="actionStore_Primary_Markers"/>
+    <addaction name="separator"/>
+    <addaction name="actionUSE_Wind_Off_Sens_Markers"/>
+    <addaction name="separator"/>
+    <addaction name="actionSet_Confirm_Reference_Single_Paint"/>
+    <addaction name="separator"/>
+    <addaction name="actionDark_Frame_Subtraction"/>
+    <addaction name="actionFlat_Field_Correction_2"/>
+    <addaction name="actionAutomatic_Marking"/>
+    <addaction name="actionMarkers_Precise_Positon"/>
+    <addaction name="actionNumerate_Markers"/>
+    <addaction name="actionFill_Up_All_Markers"/>
+    <addaction name="actionFiltering"/>
+    <addaction name="actionBackground_Work"/>
+    <addaction name="actionDistortion_Correction"/>
+    <addaction name="actionAlignment_Images"/>
+    <addaction name="actionImage_Convert"/>
+    <addaction name="actionFinal_Filtering"/>
+    <addaction name="actionResection"/>
+    <addaction name="actionSave_Results"/>
+    <addaction name="actionClose_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionAutomatic_Convert"/>
+    <addaction name="actionAutomatic_Convert_List"/>
+   </widget>
+   <widget class="QMenu" name="menuIMS_Processing">
+    <property name="title">
+     <string>Project</string>
+    </property>
+    <widget class="QMenu" name="menuNew_Project">
+     <property name="title">
+      <string>New Project</string>
+     </property>
+     <addaction name="actionSingle_Component"/>
+     <addaction name="actionDual_Component"/>
+    </widget>
+    <widget class="QMenu" name="menuCurrent_Image">
+     <property name="title">
+      <string>Current Image</string>
+     </property>
+     <addaction name="actionBackground"/>
+     <addaction name="actionBackground2"/>
+     <addaction name="actionWindOn"/>
+     <addaction name="actionWindOff"/>
+     <addaction name="separator"/>
+     <addaction name="actionBackground_3"/>
+     <addaction name="actionBackground_4"/>
+     <addaction name="actionWindOn2"/>
+     <addaction name="actionWindOff2"/>
+    </widget>
+    <addaction name="menuNew_Project"/>
+    <addaction name="actionProjectFeatures"/>
+    <addaction name="actionProcessProject"/>
+    <addaction name="actionSaveProjectResults"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpenProject"/>
+    <addaction name="actionView_Project"/>
+    <addaction name="menuCurrent_Image"/>
+    <addaction name="actionSaveProject"/>
+    <addaction name="actionCloseProject"/>
+    <addaction name="actionManager_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionLight_Ratio"/>
+    <addaction name="actionPressure_View"/>
+    <addaction name="actionPressureCoefficientView"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_Projet_and_Data"/>
+    <addaction name="actionClose_Project_and_Data"/>
+    <addaction name="separator"/>
+    <addaction name="actionMake_Field_P_Binary_Paint"/>
+    <addaction name="actionResect_Current_Image"/>
+    <addaction name="actionResect_Test_Data"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuQPED">
+    <property name="title">
+     <string>QPED</string>
+    </property>
+    <addaction name="actionQPED"/>
+    <addaction name="actionQPED_Massive"/>
+    <addaction name="actionRevise_Cross_Markers"/>
+    <addaction name="actionRevise_Pit_Markers"/>
+    <addaction name="actionRevise_Bump_Markers"/>
+   </widget>
+   <widget class="QMenu" name="menu3D_Deformations">
+    <property name="title">
+     <string>3D Deformations</string>
+    </property>
+    <addaction name="actionOpen_Project_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionCalibration"/>
+    <addaction name="actionCalculation"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose_Project_2"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionChinese"/>
+     <addaction name="actionEnglish"/>
+    </widget>
+    <addaction name="menuLanguage"/>
+    <addaction name="actionContents"/>
+    <addaction name="separator"/>
+    <addaction name="actionWebsite"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <widget class="QMenu" name="menutestContourSmoothing">
+     <property name="title">
+      <string>testContourSmoothing</string>
+     </property>
+     <addaction name="actionSmoothingByPyramid"/>
+     <addaction name="actionSmoothingByFilter"/>
+    </widget>
+    <addaction name="actionSetAsBackground"/>
+    <addaction name="actionSetAsReference"/>
+    <addaction name="actionSetAsPsp"/>
+    <addaction name="separator"/>
+    <addaction name="actionSubtract"/>
+    <addaction name="actionAdd"/>
+    <addaction name="actionDivide"/>
+    <addaction name="actiontestAverage"/>
+    <addaction name="separator"/>
+    <addaction name="actionFitEllipse"/>
+    <addaction name="actionFast_detector"/>
+    <addaction name="actionAgast_detector"/>
+    <addaction name="actionAkaze_detector"/>
+    <addaction name="actionBrisk_detector"/>
+    <addaction name="actionGFTT_detector"/>
+    <addaction name="actionKaze_detector"/>
+    <addaction name="actionMser_detector"/>
+    <addaction name="actionOrb_detector"/>
+    <addaction name="actionFilter_Enhance_Detect"/>
+    <addaction name="separator"/>
+    <addaction name="actionDisplay_reference_img"/>
+    <addaction name="actionDiplay_background_img"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actiontestLaplaceSharp"/>
+    <addaction name="actionTemplateMatching"/>
+    <addaction name="actionImage16bytes"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdaptiveThreshold"/>
+    <addaction name="actionThreshold"/>
+    <addaction name="separator"/>
+    <addaction name="actionCannyEdge"/>
+    <addaction name="actiontestContourDetection"/>
+    <addaction name="actiontestContourFiltering"/>
+    <addaction name="menutestContourSmoothing"/>
+    <addaction name="actiontestContourFit"/>
+   </widget>
+   <widget class="QMenu" name="menuPaint_Calibration">
+    <property name="title">
+     <string>Paint Calibration</string>
+    </property>
+    <addaction name="actionNew_project"/>
+    <addaction name="actionSave_range"/>
+    <addaction name="actionData_collection"/>
+    <addaction name="actionOpen_project"/>
+    <addaction name="actionSave_project"/>
+    <addaction name="actionManage_project"/>
+    <addaction name="actionView_project"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_parameter"/>
+    <addaction name="actionPaintCalibration"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuTest2">
+    <property name="title">
+     <string>Test2</string>
+    </property>
+    <widget class="QMenu" name="menuResize_2">
+     <property name="title">
+      <string>Resize</string>
+     </property>
+     <addaction name="actionBilinearInterpolation"/>
+     <addaction name="actionBicubicInterpolation"/>
+     <addaction name="actionLANCZOS4"/>
+     <addaction name="actionNearestNeighborInterpolation"/>
+    </widget>
+    <widget class="QMenu" name="menuPyramid">
+     <property name="title">
+      <string>Pyramid</string>
+     </property>
+     <addaction name="actionPyrUp"/>
+     <addaction name="actionPyrDown"/>
+    </widget>
+    <widget class="QMenu" name="menuHighPassFilter">
+     <property name="title">
+      <string>HighPassFilter</string>
+     </property>
+     <addaction name="actionSobel"/>
+     <addaction name="actionSobelX"/>
+     <addaction name="actionSobelY"/>
+    </widget>
+    <addaction name="actiontestBackgroundSubtraction"/>
+    <addaction name="actiontestMedianFilter"/>
+    <addaction name="actiontestBilateralFilter"/>
+    <addaction name="actiontestGaussianFilter"/>
+    <addaction name="actiontestHoughCircles"/>
+    <addaction name="actionhistEqualization"/>
+    <addaction name="actiontestAlignment"/>
+    <addaction name="actiontestIFFT"/>
+    <addaction name="actiontestFFT"/>
+    <addaction name="actiontestColormap"/>
+    <addaction name="actiontestSegmentation"/>
+    <addaction name="actiontestImageThinning"/>
+    <addaction name="actiontestImageThick"/>
+    <addaction name="separator"/>
+    <addaction name="menuResize_2"/>
+    <addaction name="menuPyramid"/>
+    <addaction name="menuHighPassFilter"/>
+   </widget>
+   <widget class="QMenu" name="menuTest3">
+    <property name="title">
+     <string>Test3</string>
+    </property>
+    <addaction name="actionHistGlobalThreshold"/>
+    <addaction name="actionOstuGlobalThreshold"/>
+    <addaction name="actionEntropyGlobalThreshold"/>
+    <addaction name="actionTriangleGlobalThreshold"/>
+    <addaction name="actionPaintCalibrationDataFromDisk"/>
+    <addaction name="actionBrightnessContrastAdjust"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuROI"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuPaint_Calibration"/>
+   <addaction name="menuMarkers"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuB_Convert"/>
+   <addaction name="menuIMS_Processing"/>
+   <addaction name="menuQPED"/>
+   <addaction name="menu3D_Deformations"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuTest"/>
+   <addaction name="menuTest2"/>
+   <addaction name="menuTest3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllToolBarAreas</set>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-new.png</normaloff>:/res-icon/file-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="iconText">
+    <string>&amp;New</string>
+   </property>
+   <property name="toolTip">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOepn">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-open.png</normaloff>:/res-icon/file-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-save.png</normaloff>:/res-icon/file-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-save-as.png</normaloff>:/res-icon/file-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as</string>
+   </property>
+   <property name="toolTip">
+    <string>Save as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-export.png</normaloff>:/res-icon/file-export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+   <property name="toolTip">
+    <string>Export</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionRecent_files">
+   <property name="text">
+    <string>Recent Files</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionToolbar">
+   <property name="text">
+    <string>Tool bar</string>
+   </property>
+  </action>
+  <action name="actionStatus_bar">
+   <property name="text">
+    <string>Status bar</string>
+   </property>
+  </action>
+  <action name="actionZoom_in">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/zoom-in.png</normaloff>:/res-icon/zoom-in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom in</string>
+   </property>
+  </action>
+  <action name="actionZoom_out">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/zoom-out.png</normaloff>:/res-icon/zoom-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom out</string>
+   </property>
+  </action>
+  <action name="actionPrevious">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/view-previous.png</normaloff>:/res-icon/view-previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Previous</string>
+   </property>
+  </action>
+  <action name="actionOrigin">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/zoom-origin.png</normaloff>:/res-icon/zoom-origin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Origin</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="text">
+    <string>Log</string>
+   </property>
+  </action>
+  <action name="actionOpen_ROI">
+   <property name="text">
+    <string>Open ROI</string>
+   </property>
+  </action>
+  <action name="actionSave_ROI_as">
+   <property name="text">
+    <string>Save ROI as</string>
+   </property>
+  </action>
+  <action name="actionROI_by_boxes">
+   <property name="text">
+    <string>ROI by boxes</string>
+   </property>
+  </action>
+  <action name="actionROI_by_polygons">
+   <property name="text">
+    <string>ROI by polygons</string>
+   </property>
+  </action>
+  <action name="actionROI_all">
+   <property name="text">
+    <string>ROI all</string>
+   </property>
+  </action>
+  <action name="actionInvert_ROI">
+   <property name="text">
+    <string>Invert ROI</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-undo.png</normaloff>:/res-icon/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionArithmetic">
+   <property name="text">
+    <string>Arithmetic</string>
+   </property>
+  </action>
+  <action name="actionCut_off_intensities">
+   <property name="text">
+    <string>Cut off intensities</string>
+   </property>
+  </action>
+  <action name="actionFlip_Rotate">
+   <property name="text">
+    <string>Flip/Rotate</string>
+   </property>
+  </action>
+  <action name="actionScale_Rotate_Shift">
+   <property name="text">
+    <string>Scale, Rotate,Shift</string>
+   </property>
+  </action>
+  <action name="actionScale_Rotate_Relative">
+   <property name="text">
+    <string>Scale,Rotate,Relative</string>
+   </property>
+  </action>
+  <action name="actionImage_Resize">
+   <property name="text">
+    <string>Image Resize</string>
+   </property>
+  </action>
+  <action name="actionImage_trim_Lengthen">
+   <property name="text">
+    <string>Image trim/Lengthen</string>
+   </property>
+  </action>
+  <action name="actionFlood_ROi">
+   <property name="text">
+    <string>Flood ROI</string>
+   </property>
+  </action>
+  <action name="actionFilp_up">
+   <property name="text">
+    <string>Fill up</string>
+   </property>
+  </action>
+  <action name="actionFlat_filter">
+   <property name="text">
+    <string>Flat filter</string>
+   </property>
+  </action>
+  <action name="actionGauss_Filter">
+   <property name="text">
+    <string>Gauss Filter</string>
+   </property>
+  </action>
+  <action name="actionGauss_Filter_Fast">
+   <property name="text">
+    <string>Gauss Filter Fast</string>
+   </property>
+  </action>
+  <action name="actionMedian_Filter">
+   <property name="text">
+    <string>Median Filter</string>
+   </property>
+  </action>
+  <action name="actionMedian_Fast_Filter">
+   <property name="text">
+    <string>Median Fast Filter</string>
+   </property>
+  </action>
+  <action name="actionRanged_Filters">
+   <property name="text">
+    <string>Ranged Filters</string>
+   </property>
+  </action>
+  <action name="actionFilter_Threshold">
+   <property name="text">
+    <string>Filter/Threshold</string>
+   </property>
+  </action>
+  <action name="actionOpen_Markers">
+   <property name="text">
+    <string>Open Markers</string>
+   </property>
+  </action>
+  <action name="actionClose_Markers">
+   <property name="text">
+    <string>Close Markers</string>
+   </property>
+  </action>
+  <action name="actionSave_Markers_As">
+   <property name="text">
+    <string>Save Markers As</string>
+   </property>
+  </action>
+  <action name="actionHide_Markers">
+   <property name="text">
+    <string>Hide Markers</string>
+   </property>
+  </action>
+  <action name="actionMark">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-markers-hand.png</normaloff>:/res-icon/icon-markers-hand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manually Mark</string>
+   </property>
+  </action>
+  <action name="actionAuto_Mark">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-markers-auto.png</normaloff>:/res-icon/icon-markers-auto.png</iconset>
+   </property>
+   <property name="text">
+    <string>Auto Mark...</string>
+   </property>
+  </action>
+  <action name="actionRevise_Statistics">
+   <property name="text">
+    <string>Revise Statistics</string>
+   </property>
+  </action>
+  <action name="actionFill_Up_Markers">
+   <property name="text">
+    <string>Fill Up Markers</string>
+   </property>
+  </action>
+  <action name="actionFashion">
+   <property name="text">
+    <string>Fashion</string>
+   </property>
+  </action>
+  <action name="actionDecoration">
+   <property name="text">
+    <string>Decoration</string>
+   </property>
+  </action>
+  <action name="actionFonts">
+   <property name="text">
+    <string>Fonts</string>
+   </property>
+  </action>
+  <action name="actionChart">
+   <property name="text">
+    <string>Chart</string>
+   </property>
+  </action>
+  <action name="actionSummary">
+   <property name="text">
+    <string>Summary</string>
+   </property>
+  </action>
+  <action name="actionDark_Field_Subtraction">
+   <property name="text">
+    <string>Dark Field Subtraction</string>
+   </property>
+  </action>
+  <action name="actionFlat_Field_Correction">
+   <property name="text">
+    <string>Flat Field Correction</string>
+   </property>
+  </action>
+  <action name="actionOptical_Distortion_Correction">
+   <property name="text">
+    <string>Optical Distortion Correction</string>
+   </property>
+  </action>
+  <action name="actionBackGround">
+   <property name="text">
+    <string>BackGround</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionReset_BackGround">
+   <property name="text">
+    <string>Reset BackGround</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionForeGround_Thinning">
+   <property name="text">
+    <string>ForeGround Thinning</string>
+   </property>
+  </action>
+  <action name="actionForeGround_Expansion">
+   <property name="text">
+    <string>ForeGround Expansion</string>
+   </property>
+  </action>
+  <action name="actionImage_Alignment">
+   <property name="text">
+    <string>Image Alignment</string>
+   </property>
+  </action>
+  <action name="actionImageDivision">
+   <property name="text">
+    <string>Image Division</string>
+   </property>
+  </action>
+  <action name="actionPressure_Ports">
+   <property name="text">
+    <string>Pressure Ports</string>
+   </property>
+  </action>
+  <action name="actionImage_Features">
+   <property name="text">
+    <string>Image Features</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionUndo_2">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionMarkers_Copy">
+   <property name="text">
+    <string>Markers Copy</string>
+   </property>
+  </action>
+  <action name="actionMarkers_Paste">
+   <property name="text">
+    <string>Markers Paste</string>
+   </property>
+  </action>
+  <action name="actionStore_Primary_Markers">
+   <property name="text">
+    <string>Store Primary Markers</string>
+   </property>
+  </action>
+  <action name="actionUSE_Wind_Off_Sens_Markers">
+   <property name="text">
+    <string>USE &quot;Wind-Off-Sens&quot; Markers</string>
+   </property>
+  </action>
+  <action name="actionSet_Confirm_Reference_Single_Paint">
+   <property name="text">
+    <string>Set/Confirm Reference(Single Paint)</string>
+   </property>
+  </action>
+  <action name="actionDark_Frame_Subtraction">
+   <property name="text">
+    <string>Dark Frame Subtraction</string>
+   </property>
+  </action>
+  <action name="actionFlat_Field_Correction_2">
+   <property name="text">
+    <string>Flat Field Correction</string>
+   </property>
+  </action>
+  <action name="actionAutomatic_Marking">
+   <property name="text">
+    <string>Automatic Marking</string>
+   </property>
+  </action>
+  <action name="actionMarkers_Precise_Positon">
+   <property name="text">
+    <string>Markers Precise Positon</string>
+   </property>
+  </action>
+  <action name="actionNumerate_Markers">
+   <property name="text">
+    <string>Numerate Markers</string>
+   </property>
+  </action>
+  <action name="actionFill_Up_All_Markers">
+   <property name="text">
+    <string>Fill Up All Markers</string>
+   </property>
+  </action>
+  <action name="actionFiltering">
+   <property name="text">
+    <string>Filtering</string>
+   </property>
+  </action>
+  <action name="actionBackground_Work">
+   <property name="text">
+    <string>Background Work</string>
+   </property>
+  </action>
+  <action name="actionDistortion_Correction">
+   <property name="text">
+    <string>Distortion Correction</string>
+   </property>
+  </action>
+  <action name="actionAlignment_Images">
+   <property name="text">
+    <string>Alignment Images</string>
+   </property>
+  </action>
+  <action name="actionImage_Convert">
+   <property name="text">
+    <string>Image Convert</string>
+   </property>
+  </action>
+  <action name="actionFinal_Filtering">
+   <property name="text">
+    <string>Final Filtering</string>
+   </property>
+  </action>
+  <action name="actionResection">
+   <property name="text">
+    <string>Resection</string>
+   </property>
+  </action>
+  <action name="actionSave_Results">
+   <property name="text">
+    <string>Save Results</string>
+   </property>
+  </action>
+  <action name="actionClose_Project">
+   <property name="text">
+    <string>Close Project</string>
+   </property>
+  </action>
+  <action name="actionAutomatic_Convert">
+   <property name="text">
+    <string>Automatic Convert</string>
+   </property>
+  </action>
+  <action name="actionAutomatic_Convert_List">
+   <property name="text">
+    <string>Automatic Convert List</string>
+   </property>
+  </action>
+  <action name="actionManager_Project">
+   <property name="text">
+    <string>Manager Project</string>
+   </property>
+  </action>
+  <action name="actionView_Project">
+   <property name="text">
+    <string>View Project</string>
+   </property>
+  </action>
+  <action name="actionOpen_Projet_and_Data">
+   <property name="text">
+    <string>Open Projet and Data</string>
+   </property>
+  </action>
+  <action name="actionClose_Project_and_Data">
+   <property name="text">
+    <string>Close Project and Data</string>
+   </property>
+  </action>
+  <action name="actionSaveProjectResults">
+   <property name="text">
+    <string>Save Results</string>
+   </property>
+  </action>
+  <action name="actionMake_Field_P_Binary_Paint">
+   <property name="text">
+    <string>Make Field P(Binary Paint)</string>
+   </property>
+  </action>
+  <action name="actionResect_Current_Image">
+   <property name="text">
+    <string>Resect Current Image...</string>
+   </property>
+  </action>
+  <action name="actionResect_Test_Data">
+   <property name="text">
+    <string>Resect Test Data...</string>
+   </property>
+  </action>
+  <action name="actionQPED">
+   <property name="text">
+    <string>QPED</string>
+   </property>
+  </action>
+  <action name="actionQPED_Massive">
+   <property name="text">
+    <string>QPED Massive</string>
+   </property>
+  </action>
+  <action name="actionRevise_Cross_Markers">
+   <property name="text">
+    <string>Revise Cross Markers</string>
+   </property>
+  </action>
+  <action name="actionRevise_Pit_Markers">
+   <property name="text">
+    <string>Revise Pit Markers</string>
+   </property>
+  </action>
+  <action name="actionRevise_Bump_Markers">
+   <property name="text">
+    <string>Revise Bump Markers</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project_2">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionCalibration">
+   <property name="text">
+    <string>Calibration</string>
+   </property>
+  </action>
+  <action name="actionCalculation">
+   <property name="text">
+    <string>Calculation</string>
+   </property>
+  </action>
+  <action name="actionClose_Project_2">
+   <property name="text">
+    <string>Close Project</string>
+   </property>
+  </action>
+  <action name="actionContents">
+   <property name="text">
+    <string>contents</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSetAsBackground">
+   <property name="text">
+    <string>Set img as background</string>
+   </property>
+  </action>
+  <action name="actionSetAsReference">
+   <property name="text">
+    <string>Set img as reference</string>
+   </property>
+  </action>
+  <action name="actionSetAsPsp">
+   <property name="text">
+    <string>Set img as psp</string>
+   </property>
+  </action>
+  <action name="actionSubtract">
+   <property name="text">
+    <string>Subtract</string>
+   </property>
+  </action>
+  <action name="actionAdd">
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </action>
+  <action name="actionDivide">
+   <property name="text">
+    <string>Divide</string>
+   </property>
+  </action>
+  <action name="actionDiplay_background_img">
+   <property name="text">
+    <string>Diplay background img</string>
+   </property>
+  </action>
+  <action name="actionDisplay_reference_img">
+   <property name="text">
+    <string>Display reference img</string>
+   </property>
+  </action>
+  <action name="actionDisplay_psp_img">
+   <property name="text">
+    <string>Display psp img</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-redo.png</normaloff>:/res-icon/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-paste.png</normaloff>:/res-icon/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-copy.png</normaloff>:/res-icon/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-delete.png</normaloff>:/res-icon/edit-delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/edit-cut.png</normaloff>:/res-icon/edit-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/file-import.png</normaloff>:/res-icon/file-import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+   <property name="toolTip">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionFast_detector">
+   <property name="text">
+    <string>Fast detector</string>
+   </property>
+  </action>
+  <action name="actionFilter_Enhance_Detect">
+   <property name="text">
+    <string>Filter-Enhance-Detect</string>
+   </property>
+  </action>
+  <action name="actionView3d">
+   <property name="text">
+    <string>view3d</string>
+   </property>
+  </action>
+  <action name="actionPython_matplotlib">
+   <property name="text">
+    <string>python-matplotlib</string>
+   </property>
+  </action>
+  <action name="actionPython_sendmail">
+   <property name="text">
+    <string>python-sendmail</string>
+   </property>
+  </action>
+  <action name="actionSystem_Set">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/systemset-1.png</normaloff>:/res-icon/systemset-1.png</iconset>
+   </property>
+   <property name="text">
+    <string>System Set</string>
+   </property>
+  </action>
+  <action name="actionNext">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/view-next.png</normaloff>:/res-icon/view-next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next</string>
+   </property>
+  </action>
+  <action name="actionFilter">
+   <property name="text">
+    <string>Filter</string>
+   </property>
+  </action>
+  <action name="actionTransform">
+   <property name="text">
+    <string>Transform</string>
+   </property>
+  </action>
+  <action name="actionAgast_detector">
+   <property name="text">
+    <string>Agast detector</string>
+   </property>
+  </action>
+  <action name="actionAkaze_detector">
+   <property name="text">
+    <string>Akaze detector</string>
+   </property>
+  </action>
+  <action name="actionBrisk_detector">
+   <property name="text">
+    <string>Brisk detector</string>
+   </property>
+  </action>
+  <action name="actionGFTT_detector">
+   <property name="text">
+    <string>GFTT detector</string>
+   </property>
+  </action>
+  <action name="actionKaze_detector">
+   <property name="text">
+    <string>Kaze detector</string>
+   </property>
+  </action>
+  <action name="actionMser_detector">
+   <property name="text">
+    <string>Mser detector</string>
+   </property>
+  </action>
+  <action name="actionOrb_detector">
+   <property name="text">
+    <string>Orb detector</string>
+   </property>
+  </action>
+  <action name="actionSimpleBlob_detector">
+   <property name="text">
+    <string>SimpleBlob detector</string>
+   </property>
+  </action>
+  <action name="actionSurfMatch">
+   <property name="text">
+    <string>SurfMatch</string>
+   </property>
+  </action>
+  <action name="actionCornerSubPix_detector">
+   <property name="text">
+    <string>CornerSubPix detector</string>
+   </property>
+  </action>
+  <action name="actionThreshold">
+   <property name="text">
+    <string>Threshold</string>
+   </property>
+  </action>
+  <action name="actionImage16bytes">
+   <property name="text">
+    <string>Image16bytes</string>
+   </property>
+  </action>
+  <action name="actionFitEllipse">
+   <property name="text">
+    <string>FitEllipse</string>
+   </property>
+  </action>
+  <action name="actionTemplateMatching">
+   <property name="text">
+    <string>TemplateMatching</string>
+   </property>
+  </action>
+  <action name="actiontestReadXml">
+   <property name="text">
+    <string>testReadXml</string>
+   </property>
+  </action>
+  <action name="actiontestWriteXml">
+   <property name="text">
+    <string>testWriteXml</string>
+   </property>
+  </action>
+  <action name="actionAdaptiveThreshold">
+   <property name="text">
+    <string>AdaptiveThreshold</string>
+   </property>
+  </action>
+  <action name="actionadaptiveThreshold_2">
+   <property name="text">
+    <string>adaptiveThreshold</string>
+   </property>
+  </action>
+  <action name="actiontestMedianFilter">
+   <property name="text">
+    <string>testMedianFilter</string>
+   </property>
+  </action>
+  <action name="actiontestGaussianFilter">
+   <property name="text">
+    <string>testGaussianFilter</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+  </action>
+  <action name="actionhistEqualization">
+   <property name="text">
+    <string>histEqualization</string>
+   </property>
+  </action>
+  <action name="actiontestHoughCircles">
+   <property name="text">
+    <string>testHoughCircles</string>
+   </property>
+  </action>
+  <action name="actionDelete_Marker">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-markers-remove.png</normaloff>:/res-icon/icon-markers-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Marker</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actiontestColormap">
+   <property name="text">
+    <string>testColormap</string>
+   </property>
+  </action>
+  <action name="actionAuto_sort">
+   <property name="text">
+    <string>Auto sort</string>
+   </property>
+  </action>
+  <action name="actionReferenceMark">
+   <property name="text">
+    <string>Reference Mark</string>
+   </property>
+  </action>
+  <action name="actionSave_range">
+   <property name="text">
+    <string>Set ROI</string>
+   </property>
+  </action>
+  <action name="actionSave_parameter">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save parameter</string>
+   </property>
+  </action>
+  <action name="actionPaintCalibration">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Calibration</string>
+   </property>
+  </action>
+  <action name="actiontestAlignment">
+   <property name="text">
+    <string>testAlignment</string>
+   </property>
+  </action>
+  <action name="actiontestCanny">
+   <property name="text">
+    <string>testCanny</string>
+   </property>
+  </action>
+  <action name="actiontestCanny_2">
+   <property name="text">
+    <string>testCanny</string>
+   </property>
+  </action>
+  <action name="actiontestCannyEdge">
+   <property name="text">
+    <string>testCannyEdge</string>
+   </property>
+  </action>
+  <action name="actionCannyEdge">
+   <property name="text">
+    <string>CannyEdge</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-hist.png</normaloff>:/res-icon/icon-hist.png</iconset>
+   </property>
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actiontestColorBar">
+   <property name="text">
+    <string>testColorBar</string>
+   </property>
+  </action>
+  <action name="actionSingle_Component">
+   <property name="text">
+    <string>Single Component</string>
+   </property>
+  </action>
+  <action name="actionDual_Component">
+   <property name="text">
+    <string>Dual Component</string>
+   </property>
+  </action>
+  <action name="actiontestFFT">
+   <property name="text">
+    <string>testFFT</string>
+   </property>
+  </action>
+  <action name="actiontestIFFT">
+   <property name="text">
+    <string>testIFFT</string>
+   </property>
+  </action>
+  <action name="actiontestHistogram">
+   <property name="text">
+    <string>testHistogram</string>
+   </property>
+  </action>
+  <action name="actiontestErosion">
+   <property name="text">
+    <string>testErosion</string>
+   </property>
+  </action>
+  <action name="actiontestDilation">
+   <property name="text">
+    <string>testDilation</string>
+   </property>
+  </action>
+  <action name="actiontestContourDetection">
+   <property name="text">
+    <string>testContourDetection</string>
+   </property>
+  </action>
+  <action name="actionOpening">
+   <property name="text">
+    <string>Opening</string>
+   </property>
+  </action>
+  <action name="actionClosing">
+   <property name="text">
+    <string>Closing</string>
+   </property>
+  </action>
+  <action name="actionMorphologicalGradient">
+   <property name="text">
+    <string>Gradient</string>
+   </property>
+  </action>
+  <action name="actionTop_Hat">
+   <property name="text">
+    <string>Top Hat</string>
+   </property>
+  </action>
+  <action name="actionBlack_Hat">
+   <property name="text">
+    <string>Black Hat</string>
+   </property>
+  </action>
+  <action name="actionBilinearInterpolation">
+   <property name="text">
+    <string>BilinearInterpolation</string>
+   </property>
+  </action>
+  <action name="actionBicubicInterpolation">
+   <property name="text">
+    <string>BicubicInterpolation</string>
+   </property>
+  </action>
+  <action name="actionNearestNeighborInterpolation">
+   <property name="text">
+    <string>NearestNeighborInterpolation
+
+</string>
+   </property>
+  </action>
+  <action name="actionLANCZOS4">
+   <property name="text">
+    <string>LANCZOS4 </string>
+   </property>
+  </action>
+  <action name="actiontestSegmentation">
+   <property name="text">
+    <string>testSegmentation</string>
+   </property>
+  </action>
+  <action name="actiontestLaplaceSharp">
+   <property name="text">
+    <string>testLaplaceSharp</string>
+   </property>
+  </action>
+  <action name="actiontestBackgroundSubtraction">
+   <property name="text">
+    <string>testBackgroundSubtraction</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionSobelX">
+   <property name="text">
+    <string>SobelX</string>
+   </property>
+  </action>
+  <action name="actionSobelY">
+   <property name="text">
+    <string>SobelY</string>
+   </property>
+  </action>
+  <action name="actiontestBilateralFilter">
+   <property name="text">
+    <string>testBilateralFilter</string>
+   </property>
+  </action>
+  <action name="actiontestContourFiltering">
+   <property name="text">
+    <string>testContourFiltering</string>
+   </property>
+  </action>
+  <action name="actionSmoothingByPyramid">
+   <property name="text">
+    <string>SmoothingByPyramid</string>
+   </property>
+  </action>
+  <action name="actionSmoothingByFilter">
+   <property name="text">
+    <string>SmoothingByFilter</string>
+   </property>
+  </action>
+  <action name="actionPyrUp">
+   <property name="text">
+    <string>PyrUp</string>
+   </property>
+  </action>
+  <action name="actionPyrDown">
+   <property name="text">
+    <string>PyrDown</string>
+   </property>
+  </action>
+  <action name="actionViewPseudo">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-pseudo.png</normaloff>:/res-icon/icon-pseudo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pseudo</string>
+   </property>
+  </action>
+  <action name="actionViewGray">
+   <property name="text">
+    <string>Gray</string>
+   </property>
+  </action>
+  <action name="actionThresholdImage">
+   <property name="text">
+    <string>Threshold</string>
+   </property>
+  </action>
+  <action name="actionSectional_View">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-sectional.png</normaloff>:/res-icon/icon-sectional.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sectional View</string>
+   </property>
+  </action>
+  <action name="actionLight_Ratio">
+   <property name="text">
+    <string>Light Ratio</string>
+   </property>
+  </action>
+  <action name="actionPressure_View">
+   <property name="text">
+    <string>Pressure View</string>
+   </property>
+  </action>
+  <action name="actionDilate">
+   <property name="text">
+    <string>Dilate</string>
+   </property>
+  </action>
+  <action name="actionThin">
+   <property name="text">
+    <string>Thin</string>
+   </property>
+  </action>
+  <action name="actionHistogram_2">
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actionOpening_2">
+   <property name="text">
+    <string>Opening</string>
+   </property>
+  </action>
+  <action name="actionClosing_2">
+   <property name="text">
+    <string>Closing</string>
+   </property>
+  </action>
+  <action name="actionTop_hat">
+   <property name="text">
+    <string>Top hat</string>
+   </property>
+  </action>
+  <action name="actionBlack_hat">
+   <property name="text">
+    <string>Black hat</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny</string>
+   </property>
+  </action>
+  <action name="actionSobel_2">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionRobert">
+   <property name="text">
+    <string>Robert</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionLaplacian">
+   <property name="text">
+    <string>Laplacian</string>
+   </property>
+  </action>
+  <action name="actionContour">
+   <property name="text">
+    <string>Contour</string>
+   </property>
+  </action>
+  <action name="actionFrequency_domain">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-freq.png</normaloff>:/res-icon/icon-freq.png</iconset>
+   </property>
+   <property name="text">
+    <string>Frequency domain</string>
+   </property>
+  </action>
+  <action name="actionHist_equalization">
+   <property name="text">
+    <string>Hist equalization</string>
+   </property>
+  </action>
+  <action name="actionPin_Mark">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-markers-pin.png</normaloff>:/res-icon/icon-markers-pin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pin Mark</string>
+   </property>
+  </action>
+  <action name="actionLength">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-ruler.png</normaloff>:/res-icon/icon-ruler.png</iconset>
+   </property>
+   <property name="text">
+    <string>Length</string>
+   </property>
+  </action>
+  <action name="actionTranslate_marker">
+   <property name="icon">
+    <iconset resource="res-icon.qrc">
+     <normaloff>:/res-icon/icon-maerkers-translate.png</normaloff>:/res-icon/icon-maerkers-translate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Translate marker</string>
+   </property>
+  </action>
+  <action name="actionOpenProject">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionSaveProject">
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+  </action>
+  <action name="actionCloseProject">
+   <property name="text">
+    <string>Close Project</string>
+   </property>
+  </action>
+  <action name="actionWindOn">
+   <property name="text">
+    <string>Wind On</string>
+   </property>
+  </action>
+  <action name="actionWindOff">
+   <property name="text">
+    <string>Wind Off</string>
+   </property>
+  </action>
+  <action name="actionWindOn2">
+   <property name="text">
+    <string>Wind On 2</string>
+   </property>
+  </action>
+  <action name="actionWindOff2">
+   <property name="text">
+    <string>Wind Off 2</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="text">
+    <string>Background</string>
+   </property>
+  </action>
+  <action name="actionImageSubtract">
+   <property name="text">
+    <string>Image Substraction</string>
+   </property>
+  </action>
+  <action name="actionImageAddition">
+   <property name="text">
+    <string>Image Addition</string>
+   </property>
+  </action>
+  <action name="actionProjectFeatures">
+   <property name="text">
+    <string>Project features</string>
+   </property>
+  </action>
+  <action name="actionThresholdTool">
+   <property name="text">
+    <string>Threshold</string>
+   </property>
+  </action>
+  <action name="actionResetThreshold">
+   <property name="text">
+    <string>Reset threshold</string>
+   </property>
+  </action>
+  <action name="actionBackground2">
+   <property name="text">
+    <string>Background 2</string>
+   </property>
+  </action>
+  <action name="actiontestAverage">
+   <property name="text">
+    <string>testAverage</string>
+   </property>
+  </action>
+  <action name="actionProcessProject">
+   <property name="text">
+    <string>Process Project</string>
+   </property>
+  </action>
+  <action name="actiontestImageThinning">
+   <property name="text">
+    <string>testImageThinning</string>
+   </property>
+  </action>
+  <action name="actiontestImageThick">
+   <property name="text">
+    <string>testImageThick</string>
+   </property>
+  </action>
+  <action name="actionNone">
+   <property name="text">
+    <string>None</string>
+   </property>
+  </action>
+  <action name="actionNone_2">
+   <property name="text">
+    <string>None</string>
+   </property>
+  </action>
+  <action name="actionNone2">
+   <property name="text">
+    <string>None2</string>
+   </property>
+  </action>
+  <action name="actionNone3">
+   <property name="text">
+    <string>None3</string>
+   </property>
+  </action>
+  <action name="actionPseudoConfig">
+   <property name="text">
+    <string>Pseudo config</string>
+   </property>
+  </action>
+  <action name="actionPressureCoefficientView">
+   <property name="text">
+    <string>Pressure coefficient view</string>
+   </property>
+  </action>
+  <action name="actionExportView">
+   <property name="text">
+    <string>Export view</string>
+   </property>
+  </action>
+  <action name="actionBackground_3">
+   <property name="text">
+    <string>Background 3</string>
+   </property>
+  </action>
+  <action name="actionBackground_4">
+   <property name="text">
+    <string>Background 4</string>
+   </property>
+  </action>
+  <action name="actionImage_average">
+   <property name="text">
+    <string>Image average</string>
+   </property>
+  </action>
+  <action name="actionNew_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>New project</string>
+   </property>
+  </action>
+  <action name="actionData_collection">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Data collection</string>
+   </property>
+  </action>
+  <action name="actionOpen_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Open project</string>
+   </property>
+  </action>
+  <action name="actionSave_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save project</string>
+   </property>
+  </action>
+  <action name="actionManage_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Manage project</string>
+   </property>
+  </action>
+  <action name="actionView_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>View project</string>
+   </property>
+  </action>
+  <action name="actionHistGlobalThreshold">
+   <property name="text">
+    <string>HistGlobalThreshold</string>
+   </property>
+  </action>
+  <action name="actionOstuGlobalThreshold">
+   <property name="text">
+    <string>OstuGlobalThreshold</string>
+   </property>
+  </action>
+  <action name="actionEntropyGlobalThreshold">
+   <property name="text">
+    <string>EntropyGlobalThreshold</string>
+   </property>
+  </action>
+  <action name="actionTriangleGlobalThreshold">
+   <property name="text">
+    <string>TriangleGlobalThreshold</string>
+   </property>
+  </action>
+  <action name="actionPaintCalibrationDataFromDisk">
+   <property name="text">
+    <string>PaintCalibrationDataFromDisk</string>
+   </property>
+  </action>
+  <action name="actiontestContourFit">
+   <property name="text">
+    <string>testShockDetection</string>
+   </property>
+  </action>
+  <action name="actionBrightnessContrastAdjust">
+   <property name="text">
+    <string>BrightnessContrastAdjust</string>
+   </property>
+  </action>
+  <action name="actionWebsite">
+   <property name="text">
+    <string>Website</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res-icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>
