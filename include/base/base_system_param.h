@@ -30,8 +30,6 @@ namespace PspNsBase {
     public:
         static SystemParam *GetInstance();
 
-        bool IsDemoVersion();
-
         bool IsDrawTestPaintCalibration() const;
         bool IsDrawTestImageAlignment() const;
         bool IsDrawTestMarkers() const;
@@ -66,8 +64,6 @@ namespace PspNsBase {
         void SetServerPspPort(unsigned short port);
 
     private:
-        static bool mIsDemoVersion;
-
         static bool mIsDrawTestPaintCalibration;
         static bool mIsDrawTestImageAlignment;
         static bool mIsDrawTestMarkers;

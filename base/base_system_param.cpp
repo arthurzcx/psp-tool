@@ -18,15 +18,11 @@
 
 namespace PspNsBase {
 #ifndef _DEBUG
-    bool SystemParam::mIsDemoVersion = true;
-
     bool SystemParam::mIsDrawTestPaintCalibration = false;
     bool SystemParam::mIsDrawTestImageAlignment = false;
     bool SystemParam::mIsDrawTestMarkers = false;
     bool SystemParam::mIsDrawTestPsptoolMsg = false;
 #else
-    bool SystemParam::mIsDemoVersion = false;
-
     bool SystemParam::mIsDrawTestPaintCalibration = true;
     bool SystemParam::mIsDrawTestImageAlignment = true;
     bool SystemParam::mIsDrawTestMarkers = true;    
@@ -55,10 +51,6 @@ namespace PspNsBase {
     SystemParam *SystemParam::GetInstance() {
         static SystemParam systemParam;
         return &systemParam;
-    }
-
-    bool SystemParam::IsDemoVersion() {
-        return mIsDemoVersion;
     }
 
     void SystemParam::AddTestInfo(const QString &info) {

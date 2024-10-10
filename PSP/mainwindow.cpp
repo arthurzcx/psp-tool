@@ -240,13 +240,6 @@ void MainWindow::InitFileMenu() {
     connect(ui->actionSystem_Set, SIGNAL(triggered(bool)), this, SLOT(configSystemParam()));
 
     ui->actionImport->setVisible(false);
-
-    if (PspNsBase::SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->actionSave->setEnabled(false);
-        ui->actionSave_as->setEnabled(false);
-        ui->actionExport->setEnabled(false);
-        ui->actionExportView->setEnabled(false);
-    }
 }
 
 void MainWindow::InitViewMenu() {
@@ -267,10 +260,6 @@ void MainWindow::InitViewMenu() {
 
     ui->actionPrevious->setVisible(false);
     ui->actionNext->setVisible(false);
-
-    if (PspNsBase::SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->actionSectional_View->setEnabled(false);
-    }
 }
 
 void MainWindow::InitEditMenu() {
@@ -306,10 +295,6 @@ void MainWindow::InitEditMenu() {
     ui->actionUndo_2->setVisible(false);
     ui->actionRedo->setVisible(false);
     ui->actionDelete->setVisible(false);
-
-    if (SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->actionThresholdImage->setEnabled(false);
-    }
 }
 
 void MainWindow::InitROIMenu() {
@@ -321,10 +306,6 @@ void MainWindow::InitROIMenu() {
     if (!SystemParam::GetInstance()->IsDebugMode()) {
         ui->actionROI_all->setVisible(false);
         ui->actionInvert_ROI->setVisible(false);
-    }
-
-    if (SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->menuROI->menuAction()->setEnabled(false);
     }
 }
 
@@ -361,11 +342,6 @@ void MainWindow::InitMarkerMenu() {
 
     ui->actionClose_Markers->setVisible(false);
     ui->actionRevise_Statistics->setVisible(false);
-
-    if (SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->actionReferenceMark->setEnabled(false);
-        ui->actionFill_Up_Markers->setEnabled(false);
-    }
 }
 
 void MainWindow::InitOptionsMenu() {
@@ -409,12 +385,6 @@ void MainWindow::InitProcessingMenu() {
     ui->actionSaveProjectResults->setEnabled(false);
     ui->actionView_Project->setEnabled(false);
     ui->actionManager_Project->setEnabled(false);
-
-    if (SystemParam::GetInstance()->IsDemoVersion()) {
-        ui->actionSingle_Component->setEnabled(false);
-        ui->actionPressure_View->setEnabled(false);
-        ui->actionPressureCoefficientView->setEnabled(false);
-    }
 }
 
 void MainWindow::InitTestMenu() {
